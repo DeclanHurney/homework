@@ -1,4 +1,4 @@
-package ie.cit.adf.domain;
+package ie.dell.adf.domain;
 
 import java.util.ArrayList;
 import java.util.List;

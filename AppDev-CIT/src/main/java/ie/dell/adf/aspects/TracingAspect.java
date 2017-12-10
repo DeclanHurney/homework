@@ -1,4 +1,4 @@
-package ie.cit.adf.aspects;
+package ie.dell.adf.aspects;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
@@ -10,7 +10,7 @@ import org.aspectj.lang.annotation.Before;
 public class TracingAspect {
 //	Log log = LogFactory.getLog(TracingAspect.class);
 
-	@Before(value="execution(* ie.cit.adf.domain.dao..*.*(..))")
+	@Before(value="execution(* ie.dell.adf.domain.dao..*.*(..))")
 	public void trace(JoinPoint jp) {
 		Log log = LogFactory.getLog(jp.getTarget().getClass());
 		String className = jp.getTarget().getClass().getName();

@@ -1,9 +1,10 @@
-package ie.cit.adf.services;
+package ie.dell.adf.services;
 
 import static org.hamcrest.CoreMatchers.equalTo;
 import static org.junit.Assert.assertThat;
-import ie.cit.adf.domain.Todo;
-import ie.cit.adf.domain.dao.TodoRepository;
+import ie.dell.adf.domain.Todo;
+import ie.dell.adf.domain.dao.TodoRepository;
+import ie.dell.adf.services.TodoServiceImpl;
 
 import org.junit.Before;
 import org.junit.Test;

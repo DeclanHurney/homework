@@ -1,6 +1,6 @@
-package ie.cit.adf.domain.dao;
+package ie.dell.adf.domain.dao;
 
-import ie.cit.adf.domain.Todo;
+import ie.dell.adf.domain.Todo;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;

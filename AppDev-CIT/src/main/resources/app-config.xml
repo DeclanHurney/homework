@@ -11,12 +11,12 @@
 		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd">
 
 
-	<bean id="todoRepository" class="ie.cit.adf.domain.dao.InMemoryTodoRepository" />
-	<bean id="jdbcTodoRepository" class="ie.cit.adf.domain.dao.JdbcTodoRepository">
+	<bean id="todoRepository" class="ie.dell.adf.domain.dao.InMemoryTodoRepository" />
+	<bean id="jdbcTodoRepository" class="ie.dell.adf.domain.dao.JdbcTodoRepository">
 		<constructor-arg ref="dataSource" />
 	</bean>
 
-	<bean class="ie.cit.adf.services.TodoServiceImpl">
+	<bean class="ie.dell.adf.services.TodoServiceImpl">
 		<constructor-arg ref="jdbcTodoRepository" />
 	</bean>
 
@@ -25,7 +25,7 @@
 	</bean>
 
 	<aop:aspectj-autoproxy />
-	<bean class="ie.cit.adf.aspects.TracingAspect" />
+	<bean class="ie.dell.adf.aspects.TracingAspect" />
 
 	<tx:annotation-driven />
 	<bean id="transactionManager"
@@ -39,16 +39,16 @@
 		secured-annotations="enabled" />
 
 
-	<security:authentication-manager>
+	<!-- <security:authentication-manager>
 		<security:authentication-provider>
 			<security:password-encoder hash="md5" />
 			<security:user-service properties="classpath:users.properties" />
 		</security:authentication-provider>
-	</security:authentication-manager>
+	</security:authentication-manager>-->
 
-	<!-- <beans profile="cloud">
+	<beans profile="cloud">
 		<cloud:data-source id="dataSource" service-name="tododb" />
-	</beans>-->
+	</beans>
 	<beans profile="default">
 		<jdbc:embedded-database id="dataSource" type="H2">
 			<jdbc:script location="classpath:db-schema.sql" />
